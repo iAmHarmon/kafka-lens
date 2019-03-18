@@ -13,7 +13,6 @@ const getLatestOffset = (kafkaHost, topic, partition) =>
     const offset = new kafka.Offset(client);
     offset.fetchLatestOffsets([{ topic, partition }], (err, data) => {
       if (err) reject(err);
-      console.log('result from latest offset in consumer: ', data);
       resolve(data);
     });
   });
